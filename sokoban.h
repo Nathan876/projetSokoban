@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdbool.h>
+#include <time.h>
 
 struct Points {
     int x;
@@ -12,7 +13,7 @@ struct Points {
 };
 
 /* board.c */
-char ** init_board(struct Points character, struct Points box, struct Points target);
+char ** init_board(struct Points *character, struct Points *box, struct Points *target);
 void display_board(char **board);
 
 /* character.c */
