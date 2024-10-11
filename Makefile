@@ -7,7 +7,7 @@ SRCS = main.c \
         character.c \
         verification.c
 
-all :  $(NAME)
+all:  $(NAME)
 
 $(NAME): $(SRCS)
         gcc $(SRCS) -o $(NAME)
