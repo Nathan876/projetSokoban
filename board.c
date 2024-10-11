@@ -1,7 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "sokoban.h"
 
-char ** init_board(void) {
+char ** init_board(struct Points character, struct Points box, struct Points target) {
     char ** board;
     int i;
     int j;
@@ -17,6 +16,12 @@ char ** init_board(void) {
                 board[i][j] = '#';
             } else if (j == 0 || j == 9 ) {
                 board[i][j] = '#';
+            } else if (i == character.x && j == character.y) {
+                board[i][j] = 'O';
+            } else if (i == box.x && j == box.y) {
+                board[i][j] = 'X';
+            } else if (i == target.x && j == target.y) {
+                board[i][j] = '.';
             } else {
                 board[i][j] = ' ';
             }
@@ -37,3 +42,5 @@ void display_board(char **board) {
     }
     printf("\n");
 }
+
+
